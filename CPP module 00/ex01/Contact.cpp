@@ -16,8 +16,6 @@ void Contact::InputInfo(void) {
 }
 
 void Contact::PreviewInfo(void) {
-    std::string idx;
-
     for (int i = 0; i < 3; i++) {
         if (field[i].length() < 10)
             std::cout << std::setw(10) << field[i] << '|';
@@ -28,7 +26,10 @@ void Contact::PreviewInfo(void) {
         }
     }
     std::cout << std::endl;
+}
 
-    std::getline(std::cin, idx);
-    // ViewInfo(idx);
+void Contact::ViewInfo(void) {
+    std::cout << "[Details]" << std::endl;
+    for (int i = 0; i < 5; i++)
+        std::cout << field_name[i] << " : " << field[i] << std::endl;
 }

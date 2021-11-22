@@ -10,5 +10,5 @@ class Contact {
     public:
     void InputInfo(void);
     void PreviewInfo(void);
-    void ViewInfo(int idx);
+    void ViewInfo(void);
 };
