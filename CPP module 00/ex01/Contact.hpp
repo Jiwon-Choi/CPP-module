@@ -1,6 +1,9 @@
-#include <iostream>
-#include <string>
-#include <iomanip>
+#ifndef _CONTACT_HPP_
+# define _CONTACT_HPP_
+
+# include <iostream>
+# include <string>
+# include <iomanip>
 
 class Contact {
     private:
@@ -12,3 +15,5 @@ class Contact {
     void PreviewInfo(void);
     void ViewInfo(void);
 };
+
+#endif
