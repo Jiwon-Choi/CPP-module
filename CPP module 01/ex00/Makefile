@@ -1,4 +1,4 @@
-TARGET	= zombie
+TARGET	= ex00
 
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra
