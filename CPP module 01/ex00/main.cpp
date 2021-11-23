@@ -1,18 +1,12 @@
 #include "Zombie.hpp"
 
 int main(void) {
-    Zombie* zombie[5];
-
-    for (int i = 0; i < 5; i++)
-        zombie[i] = newZombie("zombie" + std::to_string(i));
+    Zombie* zombie = newZombie("new zombie");
     std::cout << std::endl;
 
-    for (int i = 0; i < 5; i++)
-        randomChump("randomChump zombie" + std::to_string(i));
+    randomChump("randomChump zombie");
     std::cout << std::endl;
 
-    for (int i = 0; i < 5; i++)
-        delete zombie[i];
-
+    delete zombie;
     return (0);
 }
