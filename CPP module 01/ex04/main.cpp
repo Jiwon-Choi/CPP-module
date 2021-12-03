@@ -20,7 +20,11 @@ int main(int argc, char **argv) {
         return (-1);
     }
 
+    bool newLine = false;
+
     while (!fin.eof()) {
+        if (newLine == true)
+            fout << std::endl;
         std::string line;
         fin >> line;
         std::string::size_type offset = 0;
@@ -30,7 +34,8 @@ int main(int argc, char **argv) {
             offset = 0;
             fout << strNew;
         }
-        fout << line << std::endl;
+        fout << line;
+        newLine = true;
     }
 
     fin.close();
