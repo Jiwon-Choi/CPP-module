@@ -1,5 +1,5 @@
-#ifndef _CLAPTRAP_H_
-# define _CLAPTRAP_H_
+#ifndef __CLAPTRAP_H__
+# define __CLAPTRAP_H__
 
 #include <iostream>
 #include <string>
@@ -12,7 +12,9 @@ class ClapTrap {
     int _attackDamage;
 
     public:
+    ClapTrap(void);
     ClapTrap(std::string name);
+    ClapTrap(const ClapTrap& ref);
     ~ClapTrap(void);
 
     void attack(std::string const& target);
