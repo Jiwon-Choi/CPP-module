@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap("default") {
+ScavTrap::ScavTrap(void) : ClapTrap() {
     setHitPoints(100);
     setEnergyPoints(50);
     setAttackDamage(20);
