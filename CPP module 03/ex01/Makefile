@@ -1,11 +1,12 @@
-TARGET	= clapTrap
+TARGET	= ScavTrap
 
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra
 RM		= rm -rf
 
 SRC		= main.cpp \
-		  ClapTrap.cpp
+		  ClapTrap.cpp \
+		  ScavTrap.cpp
 
 OBJS	= $(SRC:.cpp=.o)
 
