@@ -21,3 +21,7 @@ FragTrap::FragTrap(const FragTrap& ref) : ClapTrap(ref) {
 FragTrap::~FragTrap(void) {
     std::cout << "FragTrap " << getName() << " Destructor is called" << std::endl;
 }
+
+void FragTrap::highFivesGuys(void) {
+    std::cout << "FragTrap " << getName() << " positive high fives request on the standard output" << std::endl;
+}

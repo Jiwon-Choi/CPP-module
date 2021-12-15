@@ -1,7 +1,7 @@
 #ifndef __FRAGTRAP_H__
 # define __FRAGTRAP_H__
 
-# include "ScavTrap.hpp"
+# include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap {
     public:
@@ -9,6 +9,8 @@ class FragTrap : public ClapTrap {
     FragTrap(std::string name);
     FragTrap(const FragTrap& ref);
     ~FragTrap(void);
+
+    void highFivesGuys(void);
 };
 
 #endif
