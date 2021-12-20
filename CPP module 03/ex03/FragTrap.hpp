@@ -10,6 +10,10 @@ class FragTrap : public virtual ClapTrap {
     FragTrap(const FragTrap& ref);
     ~FragTrap(void);
 
+    void attack(std::string const& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+
     void highFivesGuys(void);
 };
 

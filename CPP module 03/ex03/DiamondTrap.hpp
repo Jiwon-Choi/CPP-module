@@ -15,6 +15,9 @@ class DiamondTrap : public FragTrap, public ScavTrap {
     ~DiamondTrap(void);
 
     void whoAmI(void);
+
+    using ScavTrap::attack;
+    using ScavTrap::takeDamage;
 };
 
 #endif

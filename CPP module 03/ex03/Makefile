@@ -1,7 +1,7 @@
 TARGET	= DiamondTrap
 
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 -std=c++98 -Wshadow -Wno-shadow
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -Wshadow -Wno-shadow
 RM		= rm -rf
 
 SRC		= main.cpp \

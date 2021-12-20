@@ -22,6 +22,36 @@ FragTrap::~FragTrap(void) {
     std::cout << "FragTrap " << getName() << " Destructor is called" << std::endl;
 }
 
+void FragTrap::attack(std::string const& target) {
+    std::cout << "FragTrap "<< getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+}
+
+void FragTrap::takeDamage(unsigned int amount) {
+    int hp = getHitPoints();
+    if (!hp) {
+        std::cout << "FragTrap " << getName() << " is already dead" << std::endl;
+        return ;
+    }
+    std::cout << "FragTrap " << getName() << " has taken " << amount << " points of damage" << std::endl;
+    hp -= amount;
+    if (hp < 0) {
+        hp = 0;
+        std::cout << "FragTrap " << getName() << " is died" << std::endl;
+    }
+    setHitPoints(hp);
+}
+
+void FragTrap::beRepaired(unsigned int amount) {
+    int hp = getHitPoints();
+    if (!hp) {
+        std::cout << "FragTrap " << getName() << " is already dead" << std::endl;
+        return ;
+    }
+    std::cout << "FragTrap " << getName() << " has been completely repaired" << std::endl;
+    hp += amount;
+    setHitPoints(hp);
+}
+
 void FragTrap::highFivesGuys(void) {
     std::cout << "FragTrap " << getName() << " highFives!" << std::endl;
 }
