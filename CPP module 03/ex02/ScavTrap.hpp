@@ -10,6 +10,10 @@ class ScavTrap : public ClapTrap {
     ScavTrap(const ScavTrap& ref);
     ~ScavTrap(void);
 
+    void attack(std::string const& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+
     void guardGate(void);
 };
 
