@@ -1,7 +1,7 @@
 TARGET	= clapTrap
 
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 SRC		= main.cpp \
@@ -13,7 +13,7 @@ $(TARGET) : $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(TARGET)
 

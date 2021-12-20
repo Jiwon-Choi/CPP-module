@@ -1,7 +1,7 @@
 TARGET	= DiamondTrap
 
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -Wshadow -Wno-shadow
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -std=c++98 -Wshadow -Wno-shadow
 RM		= rm -rf
 
 SRC		= main.cpp \
@@ -16,7 +16,7 @@ $(TARGET) : $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
 %.o : %.cpp
-	$(CC) $(CFLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(TARGET)
 
