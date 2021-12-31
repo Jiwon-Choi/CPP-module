@@ -22,6 +22,12 @@ FragTrap::~FragTrap(void) {
     std::cout << "FragTrap " << getName() << " Destructor is called" << std::endl;
 }
 
+FragTrap& FragTrap::operator=(const FragTrap& ref) {
+    ClapTrap::operator=(ref);
+    std::cout << "FragTrap " << getName() << " assignment operator is called" << std::endl;
+    return (*this);
+}
+
 void FragTrap::attack(std::string const& target) {
     std::cout << "FragTrap "<< getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
 }

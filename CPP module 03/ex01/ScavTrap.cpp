@@ -22,6 +22,12 @@ ScavTrap::~ScavTrap(void) {
     std::cout << "ScavTrap " << getName() << " Destructor is called" << std::endl;
 }
 
+ScavTrap& ScavTrap::operator=(const ScavTrap& ref) {
+    ClapTrap::operator=(ref);
+    std::cout << "ScavTrap " << getName() << " assignment operator is called" << std::endl;
+    return (*this);
+}
+
 void ScavTrap::attack(std::string const& target) {
     std::cout << "ScavTrap "<< getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
 }

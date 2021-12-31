@@ -1,8 +1,8 @@
 #ifndef __CLAPTRAP_H__
 # define __CLAPTRAP_H__
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
 class ClapTrap {
     private:
@@ -16,6 +16,8 @@ class ClapTrap {
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap& ref);
     ~ClapTrap(void);
+
+    ClapTrap& operator=(const ClapTrap& ref);
 
     void attack(std::string const& target);
     void takeDamage(unsigned int amount);

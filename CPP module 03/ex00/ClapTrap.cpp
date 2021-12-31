@@ -16,6 +16,15 @@ ClapTrap::~ClapTrap(void) {
     std::cout << "ClapTrap " << _name << " Destructor is called" << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap &ref) {
+    _name = ref._name;
+    _hitPoints = ref._hitPoints;
+    _energyPoints = ref._energyPoints;
+    _attackDamage = ref._attackDamage;
+    std::cout << "ClapTrap " << _name << " assignment operator is called" << std::endl;
+    return (*this);
+}
+
 void ClapTrap::attack(std::string const& target) {
     std::cout << "ClapTrap "<< _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }

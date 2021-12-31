@@ -19,11 +19,18 @@ DiamondTrap::DiamondTrap(std::string name) : FragTrap(), ScavTrap() {
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& ref) : FragTrap(ref), ScavTrap(ref) {
+    _name = ref._name;
     std::cout << "DiamondTrap Copy Constructor is called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(void) {
     std::cout << "DiamondTrap " << _name << " Destructor is called" << std::endl;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& ref) {
+    _name = ref._name;
+    ClapTrap::operator=(ref);
+    return (*this);
 }
 
 void DiamondTrap::whoAmI(void) {
