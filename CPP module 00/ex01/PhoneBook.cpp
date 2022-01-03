@@ -9,8 +9,6 @@ void PhoneBook::AddContact(void) {
 }
 
 void PhoneBook::SearchContact(void) {
-    std::string str_idx;
-
     std::cout << "[Search Contact]" << std::endl;
     std::cout << '|' << std::setw(10) << "index" << '|'
                     << std::setw(10) << "first name" << '|'
@@ -22,8 +20,11 @@ void PhoneBook::SearchContact(void) {
     }
     std::cout << std::endl;
 
+    std::string str_idx;
     std::cout << ">>> Select index : ";
     std::getline(std::cin, str_idx);
+    if (std::cin.eof())
+        return ;
     if (str_idx.length() == 1 && str_idx[0] >= '0' && str_idx[0] <= '9') {
         int idx = atoi(str_idx.c_str());
         if (idx >= cnt) {

@@ -15,8 +15,6 @@ int main(void) {
             phonebook.AddContact();
         else if (cmd == "SEARCH")
             phonebook.SearchContact();
-        // else
-        //     std::cout << "Command not found!!!" << std::endl;
         std::cout << std::endl;
     }
     return (0);

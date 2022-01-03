@@ -10,8 +10,14 @@ std::string Contact::field_name[5] = {
 
 void Contact::InputInfo(void) {
     for (int i = 0; i < 5; i++) {
-        std::cout << field_name[i] << " : ";
-        std::getline(std::cin, field[i]);
+        while (true) {
+            std::cout << field_name[i] << " : ";
+            std::getline(std::cin, field[i]);
+            if (std::cin.eof())
+                return ;
+            if (!field[i].empty())
+                break ;
+        }
     }
 }
 
