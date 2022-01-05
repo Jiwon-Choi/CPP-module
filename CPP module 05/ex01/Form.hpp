@@ -12,7 +12,7 @@ private:
     const std::string _name;
     const int _signGrade;
     const int _executeGrade;
-    bool _sign;
+    bool _isSigned;
 
 public:
     Form(void);
@@ -26,7 +26,7 @@ public:
     const std::string& getName(void) const;
     const int& getSignGrade(void) const;
     const int& getExecuteGrate(void) const;
-    const bool& getSign(void) const;
+    const bool& getIsSigned(void) const;
 
     bool beSigned(const Bureaucrat& bu);
 
