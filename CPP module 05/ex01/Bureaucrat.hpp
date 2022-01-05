@@ -27,7 +27,7 @@ public:
     void increaseGrade(void);
     void decreaseGrade(void);
 
-    void signForm(Form &form);
+    void signForm(Form& form);
 
     class GradeTooHighException : public std::exception {
     public:
