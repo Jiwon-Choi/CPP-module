@@ -1,17 +1,17 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void) : ClapTrap() {
-    setHitPoints(100);
-    setEnergyPoints(100);
-    setAttackDamage(30);
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
     std::cout << "FragTrap Default Constructor is called" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-    setHitPoints(100);
-    setEnergyPoints(100);
-    setAttackDamage(30);
-    std::cout << "FragTrap " << getName() << " Constructor is called" << std::endl;
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
+    std::cout << "FragTrap " << _name << " Constructor is called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& ref) : ClapTrap(ref) {
@@ -19,45 +19,19 @@ FragTrap::FragTrap(const FragTrap& ref) : ClapTrap(ref) {
 }
 
 FragTrap::~FragTrap(void) {
-    std::cout << "FragTrap " << getName() << " Destructor is called" << std::endl;
+    std::cout << "FragTrap " << _name << " Destructor is called" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& ref) {
     ClapTrap::operator=(ref);
-    std::cout << "FragTrap " << getName() << " assignment operator is called" << std::endl;
+    std::cout << "FragTrap " << _name << " assignment operator is called" << std::endl;
     return (*this);
 }
 
 void FragTrap::attack(std::string const& target) {
-    std::cout << "FragTrap "<< getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage!" << std::endl;
-}
-
-void FragTrap::takeDamage(unsigned int amount) {
-    int hp = getHitPoints();
-    if (!hp) {
-        std::cout << "FragTrap " << getName() << " is already dead" << std::endl;
-        return ;
-    }
-    std::cout << "FragTrap " << getName() << " has taken " << amount << " points of damage" << std::endl;
-    hp -= amount;
-    if (hp < 0) {
-        hp = 0;
-        std::cout << "FragTrap " << getName() << " is died" << std::endl;
-    }
-    setHitPoints(hp);
-}
-
-void FragTrap::beRepaired(unsigned int amount) {
-    int hp = getHitPoints();
-    if (!hp) {
-        std::cout << "FragTrap " << getName() << " is already dead" << std::endl;
-        return ;
-    }
-    std::cout << "FragTrap " << getName() << " has been completely repaired" << std::endl;
-    hp += amount;
-    setHitPoints(hp);
+    std::cout << "FragTrap "<< _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 }
 
 void FragTrap::highFivesGuys(void) {
-    std::cout << "FragTrap " << getName() << " highFives!" << std::endl;
+    std::cout << "FragTrap " << _name << " highFives!" << std::endl;
 }

@@ -7,7 +7,7 @@ int main(void) {
     st.attack("st2");
     st.takeDamage(2);
     st.beRepaired(10);
-    st.takeDamage(100);
+    st.takeDamage(1000);
     st.beRepaired(10);
     std::cout << std::endl;
 

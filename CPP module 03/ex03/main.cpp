@@ -1,20 +1,19 @@
 #include "DiamondTrap.hpp"
 
 int main(void) {
-    DiamondTrap DiamondTrap1("DiamondTrap1");
-    DiamondTrap DiamondTrap2("DiamondTrap2");
+    DiamondTrap dt("dt1");
     std::cout << std::endl;
 
-    DiamondTrap1.whoAmI();
-    DiamondTrap2.whoAmI();
+    dt.attack("dt2");
+    dt.takeDamage(2);
+    dt.beRepaired(10);
+    dt.takeDamage(1000);
+    dt.beRepaired(10);
     std::cout << std::endl;
 
-    DiamondTrap1.attack("DiamondTrap2");
-    DiamondTrap2.takeDamage(DiamondTrap1.getAttackDamage());
-    std::cout << std::endl;
-
-    DiamondTrap1.guardGate();
-    DiamondTrap2.highFivesGuys();
+    dt.guardGate();
+    dt.highFivesGuys();
+    dt.whoAmI();
     std::cout << std::endl;
 
     return (0);

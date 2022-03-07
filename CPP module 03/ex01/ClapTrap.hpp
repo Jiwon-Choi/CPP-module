@@ -4,8 +4,6 @@
 # include <iostream>
 # include <string>
 
-# define CT_MAX_HP 10
-
 class ClapTrap {
     protected:
     std::string _name;

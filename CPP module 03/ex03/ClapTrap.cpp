@@ -50,35 +50,3 @@ void ClapTrap::beRepaired(unsigned int amount) {
     std::cout << "ClapTrap " << _name << " has been completely repaired" << std::endl;
     _hitPoints += amount;
 }
-
-std::string ClapTrap::getName(void) {
-    return (_name);
-}
-
-int ClapTrap::getHitPoints(void) {
-    return (_hitPoints);
-}
-
-int ClapTrap::getEnergyPoints(void) {
-    return (_energyPoints);
-}
-
-int ClapTrap::getAttackDamage(void) {
-    return (_attackDamage);
-}
-
-void ClapTrap::setName(std::string name) {
-    _name = name;
-}
-
-void ClapTrap::setHitPoints(unsigned int amount) {
-    _hitPoints = amount;
-}
-
-void ClapTrap::setEnergyPoints(unsigned int amount) {
-    _energyPoints = amount;
-}
-
-void ClapTrap::setAttackDamage(unsigned int amount) {
-    _attackDamage = amount;
-}

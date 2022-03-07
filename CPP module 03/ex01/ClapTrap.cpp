@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("default"), _hitPoints(CT_MAX_HP), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     std::cout << "ClapTrap Default Constructor is called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(CT_MAX_HP), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     std::cout << "ClapTrap " << _name << " Constructor is called" << std::endl;
 }
 
@@ -49,6 +49,4 @@ void ClapTrap::beRepaired(unsigned int amount) {
     }
     std::cout << "ClapTrap " << _name << " has been completely repaired" << std::endl;
     _hitPoints += amount;
-    if (_hitPoints > CT_MAX_HP)
-        _hitPoints = CT_MAX_HP;
 }
