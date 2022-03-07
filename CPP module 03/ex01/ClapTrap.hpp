@@ -4,8 +4,10 @@
 # include <iostream>
 # include <string>
 
+# define CT_MAX_HP 10
+
 class ClapTrap {
-    private:
+    protected:
     std::string _name;
     int _hitPoints;
     int _energyPoints;
@@ -22,16 +24,6 @@ class ClapTrap {
     void attack(std::string const& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-
-    std::string getName(void);
-    int getHitPoints(void);
-    int getEnergyPoints(void);
-    int getAttackDamage(void);
-
-    void setName(std::string name);
-    void setHitPoints(unsigned int amount);
-    void setEnergyPoints(unsigned int amount);
-    void setAttackDamage(unsigned int amount);
 };
 
 #endif

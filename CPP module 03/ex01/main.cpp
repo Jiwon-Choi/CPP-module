@@ -1,20 +1,17 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
-    ScavTrap st1("st1");
-    ScavTrap st2("st2");
+    ScavTrap st("st1");
     std::cout << std::endl;
 
-    st1.attack("st2");
-    st2.takeDamage(st1.getAttackDamage());
+    st.attack("st2");
+    st.takeDamage(2);
+    st.beRepaired(10);
+    st.takeDamage(100);
+    st.beRepaired(10);
     std::cout << std::endl;
 
-    st2.attack("st1");
-    st1.takeDamage(st2.getAttackDamage());
-    std::cout << std::endl;
-
-    st1.guardGate();
-    st2.guardGate();
+    st.guardGate();
     std::cout << std::endl;
 
     return (0);

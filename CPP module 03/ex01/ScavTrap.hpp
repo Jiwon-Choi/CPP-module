@@ -3,7 +3,12 @@
 
 # include "ClapTrap.hpp"
 
+# define ST_MAX_HP 100
+
 class ScavTrap : public ClapTrap {
+    private:
+    bool _guardGate;
+
     public:
     ScavTrap(void);
     ScavTrap(std::string name);
@@ -13,9 +18,6 @@ class ScavTrap : public ClapTrap {
     ScavTrap& operator=(const ScavTrap& ref);
 
     void attack(std::string const& target);
-    void takeDamage(unsigned int amount);
-    void beRepaired(unsigned int amount);
-
     void guardGate(void);
 };
 

@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap() : _name("default"), _hitPoints(CT_MAX_HP), _energyPoints(10), _attackDamage(0) {
     std::cout << "ClapTrap Default Constructor is called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(CT_MAX_HP), _energyPoints(10), _attackDamage(0) {
     std::cout << "ClapTrap " << _name << " Constructor is called" << std::endl;
 }
 
@@ -16,7 +16,7 @@ ClapTrap::~ClapTrap(void) {
     std::cout << "ClapTrap " << _name << " Destructor is called" << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap& ref) {
+ClapTrap& ClapTrap::operator=(const ClapTrap &ref) {
     _name = ref._name;
     _hitPoints = ref._hitPoints;
     _energyPoints = ref._energyPoints;
@@ -49,36 +49,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
     }
     std::cout << "ClapTrap " << _name << " has been completely repaired" << std::endl;
     _hitPoints += amount;
-}
-
-std::string ClapTrap::getName(void) {
-    return (_name);
-}
-
-int ClapTrap::getHitPoints(void) {
-    return (_hitPoints);
-}
-
-int ClapTrap::getEnergyPoints(void) {
-    return (_energyPoints);
-}
-
-int ClapTrap::getAttackDamage(void) {
-    return (_attackDamage);
-}
-
-void ClapTrap::setName(std::string name) {
-    _name = name;
-}
-
-void ClapTrap::setHitPoints(unsigned int amount) {
-    _hitPoints = amount;
-}
-
-void ClapTrap::setEnergyPoints(unsigned int amount) {
-    _energyPoints = amount;
-}
-
-void ClapTrap::setAttackDamage(unsigned int amount) {
-    _attackDamage = amount;
+    if (_hitPoints > CT_MAX_HP)
+        _hitPoints = CT_MAX_HP;
 }
