@@ -1,25 +1,29 @@
 #include "Dog.hpp"
 
 Dog::Dog(void) : Animal() {
+    std::cout << "Dog Default Constructor is called" << std::endl;
     type = "Dog";
     _brain = new Brain();
-    std::cout << "Dog Default Constructor is called" << std::endl;
 }
 
 Dog::Dog(const Dog& ref) : Animal(ref) {
+    std::cout << "Dog Copy Constructor is called" << std::endl;
     _brain = new Brain();
     for (int i = 0; i < IDEA_SIZE; i++)
-        _brain[i] = ref._brain[i];
-    std::cout << "Dog Copy Constructor is called" << std::endl;
+        _brain->setIdeas(ref._brain->getIdea(i));
 }
 
 Dog::~Dog(void) {
-    delete _brain;
     std::cout << "Dog Destructor is called" << std::endl;
+    delete _brain;
 }
 
 Dog& Dog::operator=(const Dog& ref) {
-    Animal::operator=(ref);
+    if (this != &ref) {
+        Animal::operator=(ref);
+        delete _brain;
+        this->_brain = ref._brain;
+    }
     return (*this);
 }
 

@@ -22,8 +22,10 @@ Brain& Brain::operator=(const Brain& ref) {
 
 void Brain::setIdeas(std::string str) {
     for (int i = 0; i < IDEA_SIZE; i++)
-        if (_ideas[i].empty())
+        if (_ideas[i].empty()) {
             _ideas[i] = str;
+            break ;
+        }
 }
 
 const std::string& Brain::getIdea(int idx) const {
