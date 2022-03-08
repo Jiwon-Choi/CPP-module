@@ -5,7 +5,7 @@ Ice::Ice(const Ice& ref) : AMateria(ref) {}
 Ice::~Ice(void) {}
 
 Ice& Ice::operator=(const Ice& ref) {
-    _type = ref._type;
+    AMateria::operator=(ref);
     return (*this);
 }
 

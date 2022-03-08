@@ -10,6 +10,7 @@ class ICharacter;
 class AMateria {
     protected:
     std::string _type;
+    bool _unequip;
 
     public:
     AMateria(void);
@@ -18,6 +19,9 @@ class AMateria {
     virtual ~AMateria(void);
 
     AMateria& operator=(const AMateria& ref);
+
+    void setUnequip(void);
+    const bool& getUnequip(void) const;
 
     std::string const & getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;

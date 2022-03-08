@@ -7,7 +7,7 @@ MateriaSource::MateriaSource(void) {
 
 MateriaSource::MateriaSource(const MateriaSource& ref) {
     for (int i = 0; i < 4; i++) {
-        if (!_inventory[i])
+        if (!ref._inventory[i])
             _inventory[i] = NULL;
         else
             _inventory[i] = ref._inventory[i]->clone();
@@ -20,8 +20,10 @@ MateriaSource::~MateriaSource(void) {
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& ref) {
+    for (int i = 0; i < 4; i++)
+        delete _inventory[i];
     for (int i = 0; i < 4; i++) {
-        if (!_inventory[i])
+        if (!ref._inventory[i])
             _inventory[i] = NULL;
         else
             _inventory[i] = ref._inventory[i]->clone();
