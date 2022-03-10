@@ -1,7 +1,7 @@
 TARGET	= a.out
 
 CC		= clang++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 #-fsanitize=address -g
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 SRC		= AMateria.cpp \
