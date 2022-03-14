@@ -41,15 +41,15 @@ void Bureaucrat::decreaseGrade(void) {
     ++_grade;
 }
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& ref) {
-    os << ref.getName() << ", bureaucrat grade " << ref.getGrade();
-    return (os);
-}
-
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
     return ("Grade Too High");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
     return ("Grade Too Low");
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& ref) {
+    os << ref.getName() << ", bureaucrat grade " << ref.getGrade();
+    return (os);
 }

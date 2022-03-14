@@ -16,9 +16,8 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 bool ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
-    if (executor.getGrade() > getExecuteGrate())
-        return (false);
-
+    if (executor.getGrade() > getExecuteGrade())
+        throw GradeTooLowException();
     std::ofstream fout(_target + "_shrubbery");
     fout << SHRUBBERY << std::endl;
     fout.close();

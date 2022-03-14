@@ -17,12 +17,14 @@ Form* Intern::makeForm(std::string formName, std::string target) {
     default:
         std::cout << "The requested form is not known" << std::endl;
         return (NULL);
-    std::cout << "Intern creates " << formName << std::endl;
     case 0:
+        std::cout << "Intern creates " << formName << std::endl;
         return new ShrubberyCreationForm(target);
     case 1:
+        std::cout << "Intern creates " << formName << std::endl;
         return new RobotomyRequestForm(target);
     case 2:
+        std::cout << "Intern creates " << formName << std::endl;
         return new PresidentialPardonForm(target);
     }
 }

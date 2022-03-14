@@ -6,7 +6,7 @@
 int main(void) {
     try {
         Bureaucrat namgu("Namgu", 3);
-        ShrubberyCreationForm shru("home");
+        ShrubberyCreationForm shru("shrubberyyyyy");
         namgu.executeForm(shru);
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;

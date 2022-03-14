@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <exception>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -25,7 +26,7 @@ public:
 
     const std::string& getName(void) const;
     const int& getSignGrade(void) const;
-    const int& getExecuteGrate(void) const;
+    const int& getExecuteGrade(void) const;
     const bool& getIsSigned(void) const;
 
     bool beSigned(const Bureaucrat& bu);

@@ -13,7 +13,7 @@ int main(void) {
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
-
+    std::cout << "---------------------------------------" << std::endl;
     try {
         Bureaucrat bori("Bori", 149);
         std::cout << bori << std::endl;
