@@ -28,8 +28,11 @@ DiamondTrap::~DiamondTrap(void) {
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& ref) {
-    _name = ref._name;
-    ClapTrap::operator=(ref);
+    if (this != &ref) {
+        _name = ref._name;
+        ClapTrap::operator=(ref);
+    }
+    std::cout << "DiamondTrap " << _name << " assignment operator is called" << std::endl;
     return (*this);
 }
 

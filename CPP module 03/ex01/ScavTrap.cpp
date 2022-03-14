@@ -23,7 +23,8 @@ ScavTrap::~ScavTrap(void) {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& ref) {
-    ClapTrap::operator=(ref);
+    if (this != &ref)
+        ClapTrap::operator=(ref);
     std::cout << "ScavTrap " << _name << " assignment operator is called" << std::endl;
     return (*this);
 }

@@ -23,7 +23,8 @@ FragTrap::~FragTrap(void) {
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& ref) {
-    ClapTrap::operator=(ref);
+    if (this != &ref)
+        ClapTrap::operator=(ref);
     std::cout << "FragTrap " << _name << " assignment operator is called" << std::endl;
     return (*this);
 }
