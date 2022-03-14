@@ -5,7 +5,8 @@ Cure::Cure(const Cure& ref) : AMateria(ref) {}
 Cure::~Cure(void) {}
 
 Cure& Cure::operator=(const Cure& ref) {
-    AMateria::operator=(ref);
+    if (this != &ref)
+        AMateria::operator=(ref);
     return (*this);
 }
 

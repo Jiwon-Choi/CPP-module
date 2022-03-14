@@ -14,7 +14,8 @@ Cat::~Cat(void) {
 }
 
 Cat& Cat::operator=(const Cat& ref) {
-    Animal::operator=(ref);
+    if (this != &ref)
+        Animal::operator=(ref);
     return (*this);
 }
 

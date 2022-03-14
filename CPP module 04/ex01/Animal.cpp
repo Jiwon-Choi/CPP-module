@@ -14,7 +14,8 @@ Animal::~Animal(void) {
 }
 
 Animal& Animal::operator=(const Animal& ref) {
-    type = ref.type;
+    if (this != &ref)
+        type = ref.type;
     return (*this);
 }
 

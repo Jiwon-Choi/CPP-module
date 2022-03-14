@@ -20,13 +20,15 @@ MateriaSource::~MateriaSource(void) {
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& ref) {
-    for (int i = 0; i < 4; i++)
-        delete _inventory[i];
-    for (int i = 0; i < 4; i++) {
-        if (!ref._inventory[i])
-            _inventory[i] = NULL;
-        else
-            _inventory[i] = ref._inventory[i]->clone();
+    if (this != &ref) {
+        for (int i = 0; i < 4; i++)
+            delete _inventory[i];
+        for (int i = 0; i < 4; i++) {
+            if (!ref._inventory[i])
+                _inventory[i] = NULL;
+            else
+                _inventory[i] = ref._inventory[i]->clone();
+        }
     }
     return (*this);
 }

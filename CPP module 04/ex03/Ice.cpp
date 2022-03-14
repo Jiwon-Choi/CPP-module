@@ -5,7 +5,8 @@ Ice::Ice(const Ice& ref) : AMateria(ref) {}
 Ice::~Ice(void) {}
 
 Ice& Ice::operator=(const Ice& ref) {
-    AMateria::operator=(ref);
+    if (this != &ref)
+        AMateria::operator=(ref);
     return (*this);
 }
 

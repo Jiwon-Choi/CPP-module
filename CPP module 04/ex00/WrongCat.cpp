@@ -14,7 +14,8 @@ WrongCat::~WrongCat(void) {
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& ref) {
-    WrongAnimal::operator=(ref);
+    if (this != &ref)
+        WrongAnimal::operator=(ref);
     return (*this);
 }
 

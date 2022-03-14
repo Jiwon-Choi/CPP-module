@@ -14,7 +14,8 @@ Dog::~Dog(void) {
 }
 
 Dog& Dog::operator=(const Dog& ref) {
-    Animal::operator=(ref);
+    if (this != &ref)
+        Animal::operator=(ref);
     return (*this);
 }
 

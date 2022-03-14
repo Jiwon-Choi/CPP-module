@@ -6,8 +6,10 @@ AMateria::AMateria(std::string const& type) : _type(type), _isEquipped(false) {}
 AMateria::~AMateria(void) {}
 
 AMateria& AMateria::operator=(const AMateria& ref) {
-    _type = ref._type;
-    _isEquipped = ref._isEquipped;
+    if (this != &ref) {
+        _type = ref._type;
+        _isEquipped = ref._isEquipped;
+    }
     return (*this);
 }
 

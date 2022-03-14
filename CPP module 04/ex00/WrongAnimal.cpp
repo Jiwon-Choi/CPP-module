@@ -14,7 +14,8 @@ WrongAnimal::~WrongAnimal(void) {
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& ref) {
-    type = ref.type;
+    if (this != &ref)
+        type = ref.type;
     return (*this);
 }
 

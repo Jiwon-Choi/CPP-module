@@ -15,8 +15,10 @@ Brain::~Brain(void) {
 }
 
 Brain& Brain::operator=(const Brain& ref) {
-    for (int i = 0; i < IDEA_SIZE; i++)
-        _ideas[i] = ref._ideas[i];
+    if (this != &ref) {
+        for (int i = 0; i < IDEA_SIZE; i++)
+            _ideas[i] = ref._ideas[i];
+    }
     return (*this);
 }
 
