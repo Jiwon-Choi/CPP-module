@@ -5,9 +5,8 @@ Brain::Brain(void) {
 }
 
 Brain::Brain(const Brain& ref) {
-    for (int i = 0; i < IDEA_SIZE; i++)
-        _ideas[i] = ref._ideas[i];
     std::cout << "Brain Copy Constructor is called" << std::endl;
+    *this = ref;
 }
 
 Brain::~Brain(void) {

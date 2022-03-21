@@ -21,14 +21,26 @@ int main(void) {
         std::cout << "sound : "; animal[i]->makeSound();
     }
 
-    std::cout << "-------------------------------------------" << std::endl;
-    Cat cat = *static_cast<Cat*>(animal[0]);
-    std::cout << "idea : " << cat.getBrainIdea(0) << std::endl;
-    cat.addBrainIdea("Add idea");
-    std::cout << "idea : " << cat.getBrainIdea(1) << std::endl;
-    std::cout << "idea : " << static_cast<Cat*>(animal[0])->getBrainIdea(1) << std::endl;
+    std::cout << std::endl << std::endl;
 
-    std::cout << "-------------------------------------------" << std::endl;
+    {
+        Cat cat = *static_cast<Cat*>(animal[0]);
+        cat.addBrainIdea("Add idea");
+        std::cout << "    Copy Cat's idea : " << cat.getBrainIdea(1) << std::endl;
+        std::cout << "Original Cat's idea : " << static_cast<Cat*>(animal[0])->getBrainIdea(1) << std::endl;
+    }
+
+    std::cout << std::endl << std::endl;
+
+    {
+        Cat cat;
+        cat = *static_cast<Cat*>(animal[0]);
+        cat.addBrainIdea("Add idea");
+        std::cout << "    Copy Cat's idea : " << cat.getBrainIdea(1) << std::endl;
+        std::cout << "Original Cat's idea : " << static_cast<Cat*>(animal[0])->getBrainIdea(1) << std::endl;
+    }
+
+    std::cout << std::endl << std::endl;
 
     for (int i = 0; i < ANIMAL_SIZE; i++) {
         std::cout << i << std::endl;
