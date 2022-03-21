@@ -21,6 +21,7 @@ Dog& Dog::operator=(const Dog& ref) {
     if (this != &ref) {
         type = ref.type;
         delete _brain;
+        _brain = new Brain();
         for (int i = 0; i < IDEA_SIZE; i++)
             _brain->setIdeas(ref._brain->getIdea(i));
     }
