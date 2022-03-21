@@ -5,12 +5,17 @@ int main(int argc, char* argv[]) {
         std::cerr << "[!] Argc Error" << std::endl;
         return (0);
     }
-    // std::string inputValue = argv[1];
-    // std::cout << inputValue << std::endl;
+
     Convert conv(argv[1]);
-    conv.toChar();
-    conv.toInt();
-    conv.toFloat();
-    conv.toDouble();
+    if (conv.checkError()) {
+        std::cerr << "[!] Error" << std::endl;
+        return (0);
+    }
+
+    conv.printChar();
+    conv.printInt();
+    conv.printFloat();
+    conv.printDouble();
+
     return (0);
 }

@@ -4,7 +4,7 @@ Convert::Convert(void) {}
 
 Convert::Convert(char * inputValue) {
     inputValue_ = inputValue;
-    rawValue_ = atof(inputValue_);
+    rawValue_ = strtod(inputValue_, &endptr_);
 }
 
 Convert::Convert(const Convert & ref) {
@@ -16,41 +16,68 @@ Convert::~Convert(void) {}
 Convert& Convert::operator=(const Convert & ref) {
     inputValue_ = ref.inputValue_;
     rawValue_ = ref.rawValue_;
+    endptr_ = ref.endptr_;
     return (*this);
 }
 
-void Convert::toChar() const {
-    std::cout << "char: ";
-    if (isnan(rawValue_) || isinf(rawValue_)
-        || rawValue_ < INT_MIN || rawValue_ > INT_MAX)
-        std::cout << "impossible" << std::endl;
-    else if (!isprint(static_cast<char>(rawValue_)))
-        std::cout << "Non displayable" << std::endl;
-    else
-        std::cout << "'" << static_cast<char>(rawValue_) << "'" << std::endl;
+char Convert::toChar(void) const {
+    return (static_cast<char>(rawValue_));
 }
 
-void Convert::toInt() const {
+int Convert::toInt(void) const {
+    return (static_cast<int>(rawValue_));
+}
+
+float Convert::toFloat(void) const {
+    return (static_cast<float>(rawValue_));
+}
+
+double Convert::toDouble(void) const {
+    return (static_cast<double>(rawValue_));
+}
+
+void Convert::printChar(void) const {
+    std::cout << "char: ";
+    if (isnan(rawValue_) || isinf(rawValue_)
+        || rawValue_ < CHAR_MIN || rawValue_ > CHAR_MAX)
+        std::cout << "impossible" << std::endl;
+    else if (!isprint(this->toChar()))
+        std::cout << "Non displayable" << std::endl;
+    else
+        std::cout << "'" << this->toChar() << "'" << std::endl;
+}
+
+void Convert::printInt(void) const {
     std::cout << "int: ";
     if (isnan(rawValue_) || isinf(rawValue_)
         || rawValue_ < INT_MIN || rawValue_ > INT_MAX)
         std::cout << "impossible" << std::endl;
     else
-        std::cout << static_cast<int>(rawValue_) << std::endl;
+        std::cout << this->toInt() << std::endl;
 }
 
-void Convert::toFloat() const {
+void Convert::printFloat(void) const {
     std::cout << "float: ";
     if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
         std::cout << "impossible" << std::endl;
+    else if (this->toFloat() == this->toInt())
+        std::cout << this->toFloat() << ".0f" << std::endl;
     else
-        std::cout << static_cast<float>(rawValue_) << "f" << std::endl;
+        std::cout << this->toFloat() << "f" << std::endl;
 }
 
-void Convert::toDouble() const {
+void Convert::printDouble(void) const {
     std::cout << "double: ";
     if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
         std::cout << "impossible" << std::endl;
+    else if (this->toDouble() == this->toInt())
+        std::cout << this->toDouble() << ".0" << std::endl;
     else
-        std::cout << rawValue_ << std::endl;
+        std::cout << this->toDouble() << std::endl;
+}
+
+bool Convert::checkError(void) const {
+    if (*endptr_ && *endptr_ != 'f')
+        return (true);
+    return (false);
 }

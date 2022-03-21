@@ -11,6 +11,7 @@ class Convert {
     private:
     const char * inputValue_;
     double rawValue_;
+    char * endptr_;
 
     Convert(void);
 
@@ -21,10 +22,17 @@ class Convert {
 
     Convert& operator=(const Convert & ref);
 
-    void toChar(void) const;
-    void toInt(void) const;
-    void toFloat(void) const;
-    void toDouble(void) const;
+    char toChar(void) const;
+    int toInt(void) const;
+    float toFloat(void) const;
+    double toDouble(void) const;
+
+    void printChar(void) const;
+    void printInt(void) const;
+    void printFloat(void) const;
+    void printDouble(void) const;
+
+    bool checkError(void) const;
 };
 
 #endif
