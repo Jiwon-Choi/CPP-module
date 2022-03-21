@@ -42,6 +42,8 @@ std::string const& Character::getName(void) const {
 }
 
 void Character::equip(AMateria* m) {
+    if (!m)
+        return ;
     for (int i = 0; i < 4; i++) {
         if (!_inventory[i]) {
             m->setIsEquipped(true);
