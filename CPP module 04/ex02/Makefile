@@ -6,6 +6,7 @@ RM		= rm -rf
 
 SRC		= main.cpp \
 		  Animal.cpp \
+		  Brain.cpp \
 		  Cat.cpp \
 		  Dog.cpp
 
