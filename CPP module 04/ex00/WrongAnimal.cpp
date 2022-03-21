@@ -1,12 +1,13 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) {
-    type = "WrongAnimal";
     std::cout << "WrongAnimal Default Constructor is called" << std::endl;
+    type = "WrongAnimal";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& ref) : type(ref.type) {
+WrongAnimal::WrongAnimal(const WrongAnimal& ref) {
     std::cout << "WrongAnimal Copy Constructor is called" << std::endl;
+    *this = ref;
 }
 
 WrongAnimal::~WrongAnimal(void) {

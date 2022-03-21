@@ -1,12 +1,13 @@
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal() {
-    type = "Cat";
+Cat::Cat(void) {
     std::cout << "Cat Default Constructor is called" << std::endl;
+    type = "Cat";
 }
 
-Cat::Cat(const Cat& ref) : Animal(ref) {
+Cat::Cat(const Cat& ref) {
     std::cout << "Cat Copy Constructor is called" << std::endl;
+    *this = ref;
 }
 
 Cat::~Cat(void) {
@@ -15,7 +16,7 @@ Cat::~Cat(void) {
 
 Cat& Cat::operator=(const Cat& ref) {
     if (this != &ref)
-        Animal::operator=(ref);
+        type = ref.type;
     return (*this);
 }
 

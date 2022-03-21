@@ -1,12 +1,13 @@
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal() {
-    type = "Dog";
+Dog::Dog(void) {
     std::cout << "Dog Default Constructor is called" << std::endl;
+    type = "Dog";
 }
 
-Dog::Dog(const Dog& ref) : Animal(ref) {
+Dog::Dog(const Dog& ref) {
     std::cout << "Dog Copy Constructor is called" << std::endl;
+    *this = ref;
 }
 
 Dog::~Dog(void) {
@@ -15,7 +16,7 @@ Dog::~Dog(void) {
 
 Dog& Dog::operator=(const Dog& ref) {
     if (this != &ref)
-        Animal::operator=(ref);
+        type = ref.type;
     return (*this);
 }
 

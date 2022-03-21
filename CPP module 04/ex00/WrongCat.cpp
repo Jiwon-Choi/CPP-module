@@ -1,12 +1,13 @@
 #include "WrongCat.hpp"
 
-WrongCat::WrongCat(void) : WrongAnimal() {
-    type = "WrongCat";
+WrongCat::WrongCat(void) {
     std::cout << "WrongCat Default Constructor is called" << std::endl;
+    type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat& ref) : WrongAnimal(ref) {
+WrongCat::WrongCat(const WrongCat& ref) {
     std::cout << "WrongCat Copy Constructor is called" << std::endl;
+    *this = ref;
 }
 
 WrongCat::~WrongCat(void) {
@@ -15,7 +16,7 @@ WrongCat::~WrongCat(void) {
 
 WrongCat& WrongCat::operator=(const WrongCat& ref) {
     if (this != &ref)
-        WrongAnimal::operator=(ref);
+        type = ref.type;
     return (*this);
 }
 
