@@ -1,12 +1,13 @@
 #include "Animal.hpp"
 
 Animal::Animal(void) {
-    type = "Animal";
     std::cout << "Animal Default Constructor is called" << std::endl;
+    type = "Animal";
 }
 
-Animal::Animal(const Animal& ref) : type(ref.type) {
+Animal::Animal(const Animal& ref) {
     std::cout << "Animal Copy Constructor is called" << std::endl;
+    *this = ref;
 }
 
 Animal::~Animal(void) {

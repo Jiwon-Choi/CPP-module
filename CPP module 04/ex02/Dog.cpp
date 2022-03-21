@@ -9,8 +9,7 @@ Dog::Dog(void) : Animal() {
 Dog::Dog(const Dog& ref) : Animal(ref) {
     std::cout << "Dog Copy Constructor is called" << std::endl;
     _brain = new Brain();
-    for (int i = 0; i < IDEA_SIZE; i++)
-        _brain->setIdeas(ref._brain->getIdea(i));
+    *this = ref;
 }
 
 Dog::~Dog(void) {
@@ -20,9 +19,11 @@ Dog::~Dog(void) {
 
 Dog& Dog::operator=(const Dog& ref) {
     if (this != &ref) {
-        Animal::operator=(ref);
+        type = ref.type;
         delete _brain;
-        this->_brain = ref._brain;
+        _brain = new Brain();
+        for (int i = 0; i < IDEA_SIZE; i++)
+            _brain->setIdeas(ref._brain->getIdea(i));
     }
     return (*this);
 }
