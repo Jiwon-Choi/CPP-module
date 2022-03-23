@@ -32,7 +32,7 @@ class Convert {
     void printFloat(void) const;
     void printDouble(void) const;
 
-    bool checkError(void) const;
+    bool checkError(void);
 };
 
 #endif

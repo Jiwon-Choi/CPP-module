@@ -58,7 +58,11 @@ void Convert::printInt(void) const {
 
 void Convert::printFloat(void) const {
     std::cout << "float: ";
-    if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
+    if (isinf(this->toFloat()) && *inputValue_ == '-')
+        std::cout << "-inff" << std::endl;
+    else if (isinf(this->toFloat()))
+        std::cout << "inff" << std::endl;
+    else if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
         std::cout << "impossible" << std::endl;
     else if (this->toFloat() == this->toInt())
         std::cout << this->toFloat() << ".0f" << std::endl;
@@ -68,7 +72,11 @@ void Convert::printFloat(void) const {
 
 void Convert::printDouble(void) const {
     std::cout << "double: ";
-    if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
+    if (isinf(this->toDouble()) && *inputValue_ == '-')
+        std::cout << "-inf" << std::endl;
+    else if (isinf(this->toDouble()))
+        std::cout << "inf" << std::endl;
+    else if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
         std::cout << "impossible" << std::endl;
     else if (this->toDouble() == this->toInt())
         std::cout << this->toDouble() << ".0" << std::endl;
@@ -76,8 +84,10 @@ void Convert::printDouble(void) const {
         std::cout << this->toDouble() << std::endl;
 }
 
-bool Convert::checkError(void) const {
-    if (*endptr_ && *endptr_ != 'f')
+bool Convert::checkError(void) {
+    if (*endptr_ == 'f')
+        endptr_++;
+    if (*endptr_)
         return (true);
     return (false);
 }
