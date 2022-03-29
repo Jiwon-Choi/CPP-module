@@ -3,7 +3,6 @@
 int main(void) {
     Data data;
 
-    // unsigned long ptr = &data;
     uintptr_t p1 = serialize(&data);
     Data * p2 = deserialize(p1);
 
