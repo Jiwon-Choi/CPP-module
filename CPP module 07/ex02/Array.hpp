@@ -14,6 +14,7 @@ class Array {
     Array(void) : arr_(NULL), size_(0) {}
     Array(unsigned int n) : arr_(new T[n]), size_(n) {}
     Array(const Array & ref) {
+        arr_ = NULL;
         *this = ref;
     }
     ~Array(void) {
@@ -21,7 +22,7 @@ class Array {
     }
 
     Array & operator=(const Array & ref) {
-        if (this != ref) {
+        if (this != &ref) {
             delete[] arr_;
             size_ = ref.size_;
             arr_ = new T[size_];
@@ -31,8 +32,8 @@ class Array {
         return (*this);
     }
 
-    T & operator[](const unsigned int idx) const {
-        if (idx >= size_)
+    T & operator[](const long long idx) const {
+        if (idx < 0 || idx >= size_)
             throw OutOfRangeException();
         return (arr_[idx]);
     }
