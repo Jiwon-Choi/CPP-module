@@ -15,17 +15,17 @@ class Convert {
 
     Convert(void);
 
+    char toChar(void) const;
+    int toInt(void) const;
+    float toFloat(void) const;
+    double toDouble(void) const;
+
     public:
     Convert(char * inputValue);
     Convert(const Convert & ref);
     ~Convert(void);
 
     Convert& operator=(const Convert & ref);
-
-    char toChar(void) const;
-    int toInt(void) const;
-    float toFloat(void) const;
-    double toDouble(void) const;
 
     void printChar(void) const;
     void printInt(void) const;

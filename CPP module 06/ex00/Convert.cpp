@@ -64,7 +64,7 @@ void Convert::printFloat(void) const {
         std::cout << "inff" << std::endl;
     else if (rawValue_ < LLONG_MIN || rawValue_ > LLONG_MAX)
         std::cout << "impossible" << std::endl;
-    else if (this->toFloat() == this->toInt() && this->toDouble() < std::pow(10, 6))
+    else if (this->toFloat() == this->toInt() && this->toFloat() < std::pow(10, 6))
         std::cout << this->toFloat() << ".0f" << std::endl;
     else
         std::cout << this->toFloat() << "f" << std::endl;
