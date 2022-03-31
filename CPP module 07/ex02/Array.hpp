@@ -32,7 +32,13 @@ class Array {
         return (*this);
     }
 
-    T & operator[](const long long idx) const {
+    T & operator[](const long long idx) {
+        if (idx < 0 || idx >= size_)
+            throw OutOfRangeException();
+        return (arr_[idx]);
+    }
+
+    const T & operator[](const long long idx) const {
         if (idx < 0 || idx >= size_)
             throw OutOfRangeException();
         return (arr_[idx]);

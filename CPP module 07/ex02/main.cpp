@@ -35,5 +35,9 @@ int main(int, char**) {
     }
     std::cout << '\n';
 
+    // {
+    //     const Array<int> constArr(MAX_VAL);
+    //     constArr[0] = 1;
+    // }
     return (0);
 }

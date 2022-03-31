@@ -2,7 +2,7 @@
 #include <iostream>
 
 template <typename T>
-void func(T & t) {
+void func(T const & t) {
     std::cout << t << std::endl;
 }
 
