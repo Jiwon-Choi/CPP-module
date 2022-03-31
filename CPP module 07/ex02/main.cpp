@@ -1,7 +1,7 @@
 #include "Array.hpp"
 
 #define MAX_VAL 5
-int main(int, char**) {
+int main(void) {
     Array<int> intArr(MAX_VAL);
     srand(time(NULL));
     for (int i = 0; i < MAX_VAL; i++)
