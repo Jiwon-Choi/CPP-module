@@ -1,11 +1,11 @@
 TARGET		= a.out
 
-CXX			= clang++
+CXX				= c++
 CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
-RM			= rm -rf
+RM				= rm -rf
 
-SRCS		= main.cpp \
-			  Span.cpp
+SRCS			= main.cpp \
+			  		Span.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
